@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.navbar{
+    margin: 32px;
+    a{
+        color: inherit;
+        text-align: center;
+    }
+    .nav-item{
+        margin-right: 48px;
+    }
+    button{
+        padding: 8px 12px;
+        border-radius: 5px;
+        font-size: 16px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+
+        &:hover{
+            background-color: white;
+            color:#007BFF ;
+            border: 1px solid #007BFF;
+        }
+    }
+}
+
+.carousel{
+    margin-top: 4rem;
+    height: 550px;
+
+    h2{
+        text-align: center;
+       
+    }
+
+    .carousel-inner{
+        height: 100%;
+
+        .carousel-item{
+            height: 100%;
+
+            .carousel-caption{
+                color: white;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+                background: rgba(0,0,0,0.5);
+                border-radius: 5px;
+
+                h5{
+                    font-size: 32px;
+                }
+                p{
+                    font-size: 16px;
+                }
+            }
+            img{
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+.sectionContainer{
+    padding: 1rem 5rem 7rem 5rem ;
+
+    .imgSection{
+        position: relative;
+        min-height: 500px;
+        background-image: linear-gradient(to right,
+        rgba(44, 56, 85, 0.9),
+        rgba(100, 125, 187, 0.1)),
+        url("images/image.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 24px;
+
+        .headerContent{
+            max-width: 600px;
+            padding: 64px 32px;
+
+            h1{
+                margin-bottom:1rem;
+                font-size: 3.5rem;
+                line-height: 4rem;
+                font-weight: 600;
+                color: white;
+            }
+            p{
+                color: white;
+            }
+        }
+
+
+        .bookingSection{
+            position: absolute;
+            bottom: -70px;
+            left: 50%;
+            transform: translate(-50%);
+            width: calc(100% - 6rem);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 30px 20px;
+            border-radius:20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+
+            form{
+                margin: 0px 32px;
+                width: 100%;
+                flex: 1;
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+
+                .formGroup{
+                    display: flex;
+                    flex-direction: column;
+
+                    .inputGroup{
+                        display: flex;
+                        flex-direction: column;
+                        width: 100%;
+                        position: relative;
+
+                        select{
+                            appearance: none;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            background: transparent;
+                            border: none;
+                            width: 100%;
+                            padding: 10px 0;
+                            font-size: 1rem;
+                            outline: none;
+                            color: black;
+                            cursor: pointer;
+
+                            &:focus ~ label{
+                                font-size: 0.8rem;
+                                top: 0;
+                            }
+                        }
+
+                        input{
+                            appearance: none;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            width: 40%;
+                            padding: 10px 0;
+                            font-size: 1rem;
+                            outline: none;
+                            border: none;
+                            background-color: transparent;
+                            border-bottom: 1px solid var(--primary-color);
+                            color: black;
+
+                            &:focus ~ label{
+                                font-size: 0.8rem;
+                                top: 0;
+                            }
+                        }
+
+                        label{
+                            position: absolute;
+                            top: 60%;
+                            left: 0;
+                            font-size: 1rem;
+                            font-weight: 500;
+                            pointer-events: none;
+                            transition: 0.3s;
+                        }
+                    }
+                }
+
+                
+            }
+        }
+    }
+}
+
+.popRoomSection{
+    margin-top: 10rem;
+
+    h2{
+        text-align: center;
+    }
+
+.popGrid{
+    display: flex;
+    gap: 2rem;
+
+    .popular_card{
+        overflow: hidden;
+        border-radius: 1rem;
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+
+        img{
+            object-fit: cover;
+        }
+
+        .popular_body{
+            padding: 1rem;
+
+            .popular_content{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+
+                h4{
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                }
+
+                btn{
+                    color: white;
+                }
+
+                p{
+                    color: inherit;
+                }
+            }
+        }
+    }
+}
+}
+
+.client{
+    margin-top: 10rem;
+    background-color: var(--extra-light);
+
+    h2{
+        text-align: center;
+    }
+
+    .client_gird{
+        margin-top: 4rem;
+        display: flex;
+        grid-template-columns: repeat(3,1fr);
+        gap: 2rem;
+
+        .client_card{
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: 1rem;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+
+            img{
+                max-width: 80px;
+                margin: auto;
+                margin-bottom: 1rem;
+                border-radius: 100%;
+            }
+
+            p{
+                text-align: center;
+                color: var(--text-dark);
+            }
+        }
+    }
+}
+
+.footer{
+    margin-top: 10rem;
+    padding: 6rem;
+    background-color: #808080;
+    color: white;
+
+    .footer_container{
+        display: grid;
+        grid-template-columns: 2fr repeat(3, 1fr);
+        gap: 5rem;
+
+        .footer_col{
+            h3{
+                margin-bottom: 1rem;
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+
+            h4{
+                margin-bottom: 1rem;
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+
+            p{
+                margin-bottom: 1rem;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+        }
+
+        .footer_bar{
+            p{
+                text-align: center;
+            }
+        }
+    }
+}
+
+
