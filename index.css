@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
-
 *{
     margin: 0;
     padding: 0;
@@ -69,39 +67,36 @@ body{
         }
     }
 }
-.sectionContainer{
-    padding: 1rem 5rem 7rem 5rem ;
+.sectionContainer {
+    padding: 1rem 5rem 7rem 5rem;
 
-    .imgSection{
+    .imgSection {
         position: relative;
         min-height: 500px;
-        background-image: linear-gradient(to right,
-        rgba(44, 56, 85, 0.9),
-        rgba(100, 125, 187, 0.1)),
-        url("images/image.png");
+        background-image: linear-gradient(to right, rgba(44, 56, 85, 0.9), rgba(100, 125, 187, 0.1)), url("images/image.png");
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
         border-radius: 24px;
 
-        .headerContent{
+        .headerContent {
             max-width: 600px;
             padding: 64px 32px;
 
-            h1{
-                margin-bottom:1rem;
+            h1 {
+                margin-bottom: 1rem;
                 font-size: 3.5rem;
                 line-height: 4rem;
                 font-weight: 600;
                 color: white;
             }
-            p{
+
+            p {
                 color: white;
             }
         }
 
-
-        .bookingSection{
+        .bookingSection {
             position: absolute;
             bottom: -70px;
             left: 50%;
@@ -111,13 +106,13 @@ body{
             align-items: center;
             gap: 10px;
             padding: 30px 20px;
-            border-radius:20px;
+            border-radius: 20px;
             background-color: rgba(255, 255, 255, 0.7);
             -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
 
-            form{
+            form {
                 margin: 0px 32px;
                 width: 100%;
                 flex: 1;
@@ -125,67 +120,96 @@ body{
                 grid-template-columns: repeat(4, 1fr);
                 gap: 20px;
 
-                .formGroup{
+                .formGroup {
                     display: flex;
                     flex-direction: column;
+                    position: relative;
 
-                    .inputGroup{
-                        display: flex;
-                        flex-direction: column;
-                        width: 100%;
+                    .inputGroup {
                         position: relative;
+                        width: 100%;
 
-                        select{
-                            appearance: none;
-                            -webkit-appearance: none;
-                            -moz-appearance: none;
-                            background: transparent;
-                            border: none;
-                            width: 100%;
-                            padding: 10px 0;
-                            font-size: 1rem;
-                            outline: none;
-                            color: black;
-                            cursor: pointer;
-
-                            &:focus ~ label{
-                                font-size: 0.8rem;
-                                top: 0;
-                            }
-                        }
-
-                        input{
-                            appearance: none;
-                            -webkit-appearance: none;
-                            -moz-appearance: none;
-                            width: 40%;
-                            padding: 10px 0;
-                            font-size: 1rem;
-                            outline: none;
-                            border: none;
-                            background-color: transparent;
-                            border-bottom: 1px solid var(--primary-color);
-                            color: black;
-
-                            &:focus ~ label{
-                                font-size: 0.8rem;
-                                top: 0;
-                            }
-                        }
-
-                        label{
+                        label {
                             position: absolute;
-                            top: 60%;
-                            left: 0;
+                            top: 50%;
+                            left: 10px;
+                            transform: translateY(-50%);
                             font-size: 1rem;
-                            font-weight: 500;
+                            color: gray;
+                            transition: 0.3s ease-in-out;
                             pointer-events: none;
-                            transition: 0.3s;
+                        }
+
+                        input,
+                        select {
+                            width: 100%;
+                            padding: 12px 10px;
+                            font-size: 1rem;
+                            border: 1px solid #ccc;
+                            border: none;
+                            outline: none;
+                            background: transparent;
+                            appearance: none;
+                            -webkit-appearance: none;
+                            -moz-appearance: none;
+                            cursor: pointer;
+                            border-bottom: 2px solid black;
+
+                            &:focus ~ label,
+                            &:not(:placeholder-shown) ~ label {
+                                top: 5px;
+                                font-size: 0.8rem;
+                                color: black;
+                            }
+                        }
+
+                        select:valid ~ label {
+                            top: 5px;
+                            left: 10px;
+                            font-size: 0.8rem;
+                            color: black;
+                        }
+
+                        &::after {
+                            position: absolute;
+                            right: 10px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            font-size: 0.8rem;
+                            color: gray;
+                            pointer-events: none;
+                        }
+                    }
+
+                    input[type="date"]{
+                        position: relative;
+                        color: transparent;
+                        text-align: center;
+
+                        &:focus, 
+                        &:valid{
+                            color: black;
                         }
                     }
                 }
+            }
 
-                
+            .btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 10px 15px;
+                font-size: 1.2rem;
+                background-color: rgba(0, 0, 0, 0.7);
+                color: white;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: 0.3s;
+
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.9);
+                }
             }
         }
     }
@@ -312,6 +336,183 @@ body{
                 text-align: center;
             }
         }
+    }
+}
+
+.inputGroup {
+    position: relative;
+}
+
+.inputGroup label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+    color: gray;
+    font-size: 16px;
+}
+
+.inputGroup input:focus ~ label,
+.inputGroup input:not(:placeholder-shown) ~ label {
+    top: 5px;
+    font-size: 12px;
+    color: black;
+}
+
+
+input[type="date"] {
+    position: relative;
+    color: transparent;
+    text-align: center;
+}
+
+input[type="date"]:focus,
+input[type="date"]:valid {
+    color: black;
+}
+
+/* Responsive Breakpoints */
+/* Mobile Devices (up to 576px) */
+@media screen and (max-width: 576px) {
+    .navbar {
+        margin: 10px;
+    }
+
+    .navbar .nav-item {
+        margin-right: 10px;
+    }
+
+    .sectionContainer {
+        padding: 1rem;
+    }
+
+    .sectionContainer .imgSection {
+        min-height: 300px;
+    }
+
+    .sectionContainer .imgSection .headerContent {
+        padding: 20px 15px;
+        max-width: 100%;
+    }
+
+    .sectionContainer .imgSection .headerContent h1 {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+
+    .sectionContainer .imgSection .bookingSection {
+        position: static;
+        width: 100%;
+        transform: none;
+        margin-top: 20px;
+        flex-direction: column;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .sectionContainer .imgSection .bookingSection form {
+        grid-template-columns: 1fr;
+        margin: 0;
+        gap: 10px;
+    }
+
+    .carousel {
+        height: 250px;
+        margin-top: 2rem;
+    }
+
+    .carousel .carousel-inner .carousel-item .carousel-caption h5 {
+        font-size: 1.5rem;
+    }
+
+    .carousel .carousel-inner .carousel-item .carousel-caption p {
+        font-size: 0.8rem;
+    }
+
+    .popRoomSection .popGrid {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .client .client_gird {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .footer .footer_container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* for tablet and ipads (577px to 992px) */
+@media screen and (min-width: 577px) and (max-width: 992px) {
+    .navbar .nav-item {
+        margin-right: 20px;
+    }
+
+    .sectionContainer {
+        padding: 1rem 2rem;
+    }
+
+    .sectionContainer .imgSection .headerContent h1 {
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+
+    .sectionContainer .imgSection .bookingSection {
+        width: calc(100% - 4rem);
+    }
+
+    .sectionContainer .imgSection .bookingSection form {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .carousel {
+        height: 400px;
+    }
+
+    .popRoomSection .popGrid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .client .client_gird {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .footer .footer_container {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+}
+
+/* for large tablets and desktops (993px to 1200px) */
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    .sectionContainer {
+        padding: 1rem 3rem;
+    }
+
+    .sectionContainer .imgSection .bookingSection {
+        width: calc(100% - 6rem);
+    }
+
+    .sectionContainer .imgSection .bookingSection form {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+
+    .popRoomSection .popGrid {
+        justify-content: space-between;
+    }
+
+    .footer .footer_container {
+        grid-template-columns: 2fr repeat(3, 1fr);
+        gap: 4rem;
     }
 }
 
